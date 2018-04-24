@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
 import {  View, Text, Dimensions, StyleSheet, Platform} from 'react-native';
-import Carousels from 'react-native-snap-carousel';
-import SliderEntry from './SliderEntry';
+import Carousel from 'react-native-snap-carousel';
+import CarouselItem from './CarouselItem';
 import {sliderWidth, itemWidth} from '../../utils/carousel';
 
-const Carousel = () => {
+const CarouselList = () => {
   const renderCards = ({item}) => {
-    return <SliderEntry data={item} />;
+    return <CarouselItem data={item} />;
   }
   return (
-      <Carousels
+      <Carousel
         data={ENTRIES2}
         renderItem={renderCards}
         sliderWidth={sliderWidth}
@@ -22,7 +22,7 @@ const Carousel = () => {
   );
 }
 
-export default Carousel;
+export default CarouselList;
 
 
 const ENTRIES2 = [

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
-import styles from './SliderEntry.style';
+import styles from './carouselItem.style';
 
-const SliderEntry = (props) => {
+const CarouselItem = (props) => {
   const { data: { title, subtitle, illustration } } = props;
 
   const image = () => (
@@ -37,4 +37,4 @@ const SliderEntry = (props) => {
   
 // })
 
-export default SliderEntry;
+export default CarouselItem;

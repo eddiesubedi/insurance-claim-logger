@@ -1,6 +1,5 @@
 import { StyleSheet, Dimensions, Platform } from 'react-native';
 import {sliderWidth, itemWidth, itemHorizontalMargin, wp} from '../../utils/carousel';
-import { platform } from 'os';
 
 const colors = {
     black: '#1a1917',
@@ -51,7 +50,7 @@ export default StyleSheet.create({
     ...Platform.select ({
       android: {
         borderWidth: 2,
-        borderColor: 'black',
+        borderColor: '#eee',
       }
     })
   },
