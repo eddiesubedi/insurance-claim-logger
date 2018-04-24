@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Text, View, SafeAreaView, StyleSheet } from 'react-native'
 
 import Search from '../../components/Search/Search'
+import Carousel from '../../components/Carousel/Carousel'
 
 export default class HomeScreen extends Component {
   render() {
@@ -10,6 +11,7 @@ export default class HomeScreen extends Component {
         <View style={styles.searchContainer}>
           <Search></Search>
         </View>
+        <Carousel></Carousel>
       </SafeAreaView>
     )
   }
@@ -22,6 +24,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   searchContainer: {
-    padding: 20,
+    padding: 30,
   }
 })
