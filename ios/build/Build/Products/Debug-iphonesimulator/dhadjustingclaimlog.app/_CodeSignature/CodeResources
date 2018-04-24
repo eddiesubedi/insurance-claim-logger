@@ -4,6 +4,10 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Arimo-Regular.ttf</key>
+		<data>
+		jvOaaHMnkJEQR3A+7ZCXb9D0DEU=
+		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
 		zfkQBD32M0/srdiQtNIFkfx1ZYM=
@@ -71,7 +75,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		hYoEiexXiJtGkQvueV3vsw7d72E=
+		AyMFCiH4o+vwv6MpdZQGnOwplTA=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -103,7 +107,7 @@
 		</data>
 		<key>PlugIns/dhadjustingclaimlogTests.xctest.dSYM/Contents/Resources/DWARF/dhadjustingclaimlogTests</key>
 		<data>
-		JuXoHL0xchEAB6AEZzjR48lrvhs=
+		vrEuFb535hf5frXS9R1+b3z3pHM=
 		</data>
 		<key>PlugIns/dhadjustingclaimlogTests.xctest/Info.plist</key>
 		<data>
@@ -115,7 +119,11 @@
 		</data>
 		<key>PlugIns/dhadjustingclaimlogTests.xctest/dhadjustingclaimlogTests</key>
 		<data>
-		GVuNfhYmEB5afSg5esnOkNEN1uo=
+		gLANQoTAbRYY/DYzSB4Cb+1Z3ZM=
+		</data>
+		<key>Poppins-SemiBold.ttf</key>
+		<data>
+		sVTJo0nhneNbN15s2w7puMicPU0=
 		</data>
 		<key>SimpleLineIcons.ttf</key>
 		<data>
@@ -128,6 +136,17 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Arimo-Regular.ttf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			jvOaaHMnkJEQR3A+7ZCXb9D0DEU=
+			</data>
+			<key>hash2</key>
+			<data>
+			QjpMFNMtKEbVtU2boZLsoX0dVu5DFgHd7AmnbGvFRpI=
+			</data>
+		</dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<dict>
 			<key>hash</key>
@@ -365,11 +384,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JuXoHL0xchEAB6AEZzjR48lrvhs=
+			vrEuFb535hf5frXS9R1+b3z3pHM=
 			</data>
 			<key>hash2</key>
 			<data>
-			dlgsltZ/LJl57wpih9XByqMShAP4nhI3ReiA1YvFyR4=
+			U+9HzG8DV+dPN4DV1kD2cXhYxJ2IJBoiGZxxg2dzNRI=
 			</data>
 		</dict>
 		<key>PlugIns/dhadjustingclaimlogTests.xctest/Info.plist</key>
@@ -398,11 +417,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GVuNfhYmEB5afSg5esnOkNEN1uo=
+			gLANQoTAbRYY/DYzSB4Cb+1Z3ZM=
 			</data>
 			<key>hash2</key>
 			<data>
-			hT16cUO2NiyrRI1UbgRN4RKHgMumep8hjzuaPPS/5cY=
+			L+iVNum1BiOaui3jgjvjtkStt29wazeAyeF68GuSObY=
+			</data>
+		</dict>
+		<key>Poppins-SemiBold.ttf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			sVTJo0nhneNbN15s2w7puMicPU0=
+			</data>
+			<key>hash2</key>
+			<data>
+			Ke/h9jrx4e7xRwBh9pGS9wgReXgwGYtOEAYUQ/4xOAI=
 			</data>
 		</dict>
 		<key>SimpleLineIcons.ttf</key>

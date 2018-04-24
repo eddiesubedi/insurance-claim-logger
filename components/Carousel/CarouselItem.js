@@ -12,29 +12,29 @@ const CarouselItem = (props) => {
     />
   );
   return (
-    <TouchableOpacity
-      activeOpacity={1}
-      style={styles.slideInnerContainer}
-      onPress={() => { alert(`You've clicked '${title}'`); }}
-      >
-        <View style={styles.imageContainer}>
-          { image() }
-        </View>
-        <View style={styles.textContainer}>
-          <Text>{title}</Text>
-          <Text
-            style={styles.subtitle}
-            numberOfLines={2}
-          >
-            { subtitle }
-          </Text>
-        </View>
-    </TouchableOpacity>
-  );
+<TouchableOpacity
+activeOpacity={1}
+style={styles.slideInnerContainer}
+onPress={() => { alert(`You've clicked '${title}'`); }} >
+  <View style={styles.extraSpaceContainer}>
+    <View style={styles.close}>
+      <Text style={styles.closeIcon} >X</Text>
+    </View>
+    
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>
+        { image() }
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.title} >{title}</Text>
+        <Text style={styles.subtitle} numberOfLines={2}>
+         { subtitle }
+        </Text>
+      </View>
+    </View>
+  </View>
+</TouchableOpacity>
+);
 }
-
-// const styles = StyleSheet.create({
-  
-// })
 
 export default CarouselItem;

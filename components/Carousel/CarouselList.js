@@ -15,8 +15,8 @@ const CarouselList = () => {
         renderItem={renderCards}
         sliderWidth={sliderWidth}
         itemWidth={itemWidth}
-        inactiveSlideOpacity={1}
-        inactiveSlideScale={0.95}
+        inactiveSlideOpacity={.5}
+        inactiveSlideScale={0.90}
         enableMomentum={false}
       />
   );
@@ -27,7 +27,7 @@ export default CarouselList;
 
 const ENTRIES2 = [
   {
-      title: 'Favourites landscapes 1',
+      title: 'Fire In Napa',
       subtitle: 'Lorem ipsum dolor sit amet',
       illustration: 'https://i.imgur.com/SsJmZ9jl.jpg'
   },
