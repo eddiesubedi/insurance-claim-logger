@@ -2,6 +2,7 @@ import { StyleSheet, Dimensions, Platform } from 'react-native';
 import {sliderWidth, itemWidth, itemHorizontalMargin, wp} from '../../utils/carousel';
 import Fonts from '../../utils/fonts';
 
+
 const colors = {
     black: '#1a1917',
     gray: '#888888',
@@ -11,7 +12,8 @@ const colors = {
 
 const IS_IOS = Platform.OS === 'ios';
 const { height: viewportHeight } = Dimensions.get('window');
-const slideHeight = viewportHeight * 0.5;
+const slideHeightIOS = viewportHeight * 0.5;
+const slideHeightAndriod = viewportHeight * 0.6;
 const entryBorderRadius = 8;
 
 export default StyleSheet.create({
@@ -61,8 +63,13 @@ export default StyleSheet.create({
   },
   slideInnerContainer: {
     width: itemWidth,
-    height: slideHeight,
-    marginTop: '10%',
+    height: slideHeightAndriod,
+    ...Platform.select ({
+      ios: {
+        marginTop: '10%',
+        height: slideHeightIOS
+      }
+    }),
   },
   imageContainer: {
     flex: 1,
@@ -96,13 +103,18 @@ export default StyleSheet.create({
   title: {
     color: colors.black,
     fontSize: 20,
-    letterSpacing: 2,
-    fontFamily: Fonts.PoppinsSemiBold
+    fontFamily: Fonts.PoppinsSemiBold,
   },
   subtitle: {
     marginTop: 6,
     color: colors.gray,
-    fontSize: 12,
-    fontStyle: 'italic'
+    fontSize: 16,
+    fontFamily: Fonts.Arimo,
+    lineHeight: 22,
+    ...Platform.select ({
+      android: {
+        lineHeight: 28
+      }
+    })
   },
 });

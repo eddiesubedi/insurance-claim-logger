@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {  View, Text, Dimensions, StyleSheet, Platform} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import CarouselItem from './CarouselItem';
+
 import {sliderWidth, itemWidth} from '../../utils/carousel';
 
 const CarouselList = () => {
@@ -28,7 +29,7 @@ export default CarouselList;
 const ENTRIES2 = [
   {
       title: 'Fire In Napa',
-      subtitle: 'Lorem ipsum dolor sit amet',
+      subtitle: 'After the Napa Fires, a Disaster-in-Waiting: Toxic AshGeorge Rose/Getty ImagesBy any measure, the fires that tore through Northern California were a major disaster. Forty-two people are dead, and 100,000 are displaced. More than 8,400 homes and other buildings were destroyed, more than 160,000 acres burned—and the fires aren’t all out yet.',
       illustration: 'https://i.imgur.com/SsJmZ9jl.jpg'
   },
   {

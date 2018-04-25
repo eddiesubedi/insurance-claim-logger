@@ -75,7 +75,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		AyMFCiH4o+vwv6MpdZQGnOwplTA=
+		Ote0gznxeyMPAD26dQL3ZOsiwW8=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -120,6 +120,10 @@
 		<key>PlugIns/dhadjustingclaimlogTests.xctest/dhadjustingclaimlogTests</key>
 		<data>
 		gLANQoTAbRYY/DYzSB4Cb+1Z3ZM=
+		</data>
+		<key>Poppins-Bold.ttf</key>
+		<data>
+		QTx8YYj1tzSCxxCX3Mhs/23tBfY=
 		</data>
 		<key>Poppins-SemiBold.ttf</key>
 		<data>
@@ -422,6 +426,17 @@
 			<key>hash2</key>
 			<data>
 			L+iVNum1BiOaui3jgjvjtkStt29wazeAyeF68GuSObY=
+			</data>
+		</dict>
+		<key>Poppins-Bold.ttf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			QTx8YYj1tzSCxxCX3Mhs/23tBfY=
+			</data>
+			<key>hash2</key>
+			<data>
+			a1ZrOAdZ3RlVQihWTG+y3AH89r/lzcW6KPHOOzYKn7U=
 			</data>
 		</dict>
 		<key>Poppins-SemiBold.ttf</key>
