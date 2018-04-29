@@ -6,8 +6,8 @@ export function wp (percentage) {
   const value = (percentage * viewportWidth) / 100;
   return Math.round(value);
 }
-export const itemHorizontalMargin = wp(2);
+export const itemHorizontalMargin = wp(1.5);
 export const sliderWidth = viewportWidth;
 
 const slideWidth = wp(75);
-export const itemWidth = slideWidth + itemHorizontalMargin * 2;
+export const itemWidth = slideWidth + itemHorizontalMargin * 4;

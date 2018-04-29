@@ -13,16 +13,14 @@ const CarouselItem = (props) => {
       style={styles.image}
     />
   );
+  // onPress={() => { alert(`You've clicked '${title}'`); }} 
   return (
-  <TouchableOpacity
-    activeOpacity={1}
-    style={styles.slideInnerContainer}
-    onPress={() => { alert(`You've clicked '${title}'`); }} >
+  <View
+    style={styles.slideInnerContainer}>
       <View style={styles.extraSpaceContainer}>
         <View style={styles.close}>
           <Text style={styles.closeIcon} >X</Text>
         </View>
-        
         <View style={styles.container}>
           <View style={styles.imageContainer}>
             { image() }
@@ -33,13 +31,13 @@ const CarouselItem = (props) => {
               style={styles.title}>{`${title}`}
             </TextLetterSpacing>
             <Text style={styles.subtitle} 
-            numberOfLines={4}>
+              numberOfLines={2}>
             { subtitle }
             </Text>
           </View>
         </View>
       </View>
-    </TouchableOpacity>
+    </View>
   );
 }
 

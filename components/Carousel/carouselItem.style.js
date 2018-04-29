@@ -25,7 +25,7 @@ export default StyleSheet.create({
     shadowRadius: 10,
   },
   extraSpaceContainer: {
-    paddingTop: 10,
+    paddingTop: 20,
     paddingLeft: 10,
     paddingBottom: 10,
     paddingRight: 10,
@@ -66,7 +66,6 @@ export default StyleSheet.create({
     height: slideHeightAndriod,
     ...Platform.select ({
       ios: {
-        marginTop: '10%',
         height: slideHeightIOS
       }
     }),
