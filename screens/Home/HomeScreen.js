@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, SafeAreaView, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
+import { Text, View, SafeAreaView, StyleSheet, Dimensions, TouchableOpacity, ScrollView } from 'react-native'
 import TextLetterSpacing from 'react-native-letter-spacing';
 import Icon from 'react-native-vector-icons/Octicons';
 
@@ -7,13 +7,14 @@ import Search from '../../components/Search/Search'
 import CarouselList from '../../components/Carousel/CarouselList'
 import Filter from '../../components/Filter/Filter'
 import Fonts from '../../utils/fonts'
+import KeyboardAvoidingView from '../../components/KeyboardAvoidingView/KeyboardAvoidingView'
 
 import {itemWidth} from '../../utils/carousel'
 
 export default class HomeScreen extends Component {
   render() {
     return (
-      <SafeAreaView style={styles.container} >
+      <SafeAreaView style={styles.container}>
         <View style={styles.searchContainer}>
           <Search></Search>
         </View>
@@ -37,6 +38,7 @@ export default class HomeScreen extends Component {
           </TouchableOpacity>
         </View>
       </SafeAreaView>
+
     )
   }
 }

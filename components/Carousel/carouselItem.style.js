@@ -4,10 +4,8 @@ import Fonts from '../../utils/fonts';
 
 
 const colors = {
-    black: '#1a1917',
-    gray: '#888888',
-    background1: '#B721FF',
-    background2: '#21D4FD'
+  black: '#1a1917',
+  gray: '#888888',
 };
 
 const IS_IOS = Platform.OS === 'ios';
@@ -109,4 +107,27 @@ export default StyleSheet.create({
       }
     })
   },
+  buttonRow: {
+    display: 'flex',
+    flexDirection:'row',
+    marginTop:25 - entryBorderRadius
+  },
+  buttonContainer: {
+    flex: 1,
+    alignItems: 'flex-start',
+
+    display: 'flex'
+  },
+  sendButton: {
+    marginLeft: 'auto'
+  }, 
+  btnText: {
+    fontFamily: Fonts.MontserratSemiBold,
+  },
+  editText: {
+    color: '#3a6abe'
+  },
+  sendText: {
+    color: '#4cae4a'
+  }
 });

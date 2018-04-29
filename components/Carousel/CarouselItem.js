@@ -34,6 +34,18 @@ const CarouselItem = (props) => {
               numberOfLines={2}>
             { subtitle }
             </Text>
+            <View style={styles.buttonRow} >
+              <View style={styles.buttonContainer}>
+                <TouchableOpacity>
+                  <Text style={[styles.btnText, styles.editText]}>Edit</Text>
+                </TouchableOpacity>
+              </View>
+              <View style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.sendButton}>
+                  <Text style={[styles.btnText, styles.sendText]}>Send</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
           </View>
         </View>
       </View>
