@@ -12,8 +12,6 @@ const colors = {
 
 const IS_IOS = Platform.OS === 'ios';
 const { height: viewportHeight } = Dimensions.get('window');
-const slideHeightIOS = viewportHeight * 0.5;
-const slideHeightAndriod = viewportHeight * 0.6;
 const entryBorderRadius = 8;
 
 export default StyleSheet.create({
@@ -63,12 +61,7 @@ export default StyleSheet.create({
   },
   slideInnerContainer: {
     width: itemWidth,
-    height: slideHeightAndriod,
-    ...Platform.select ({
-      ios: {
-        height: slideHeightIOS
-      }
-    }),
+    height: 'auto',
   },
   imageContainer: {
     flex: 1,

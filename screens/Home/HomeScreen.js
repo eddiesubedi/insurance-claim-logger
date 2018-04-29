@@ -53,7 +53,9 @@ const styles = StyleSheet.create({
     paddingRight: 0,
     paddingBottom: 20,
     width: itemWidth - 20,
-    alignSelf: 'center'
+    alignSelf: 'center',
+
+   
   },
   filterContainer: {
     width: itemWidth - 20,
@@ -62,6 +64,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 10,
+    
   },
   textContainer: {
     flex: 1
@@ -75,7 +78,7 @@ const styles = StyleSheet.create({
     
   },
   cards: {
-    flex: 5
+    flex: 3
   },
   btnContainer: {
     flex: 1,
@@ -83,7 +86,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
 
     display:'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   button: {
     backgroundColor: '#d94046',
@@ -94,7 +98,8 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     display:'flex',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    
   },
   buttonText: {
     color: 'white',
