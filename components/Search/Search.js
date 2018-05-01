@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     shadowRadius: 10,    
     elevation: 2,
     alignItems: 'center',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
   input: {
     padding: 0,

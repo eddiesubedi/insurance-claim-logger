@@ -16,13 +16,14 @@ const Filter = (props) => {
       defaultIndex = {0}
       dropdownTextStyle={styles.dropdownTextStyle}
       dropdownStyle={styles.dropdownStyle}>
-      <Icon size={20} name="settings"/>
+      <View style={styles.container}>
+        <Icon size={29} name="settings"/>
+      </View>
     </ModalDropdown>
   )
 }
 
 const styles = StyleSheet.create({
-  
   dropdownStyle: {
     width: '50%',
     height: 'auto',
@@ -42,7 +43,9 @@ const styles = StyleSheet.create({
   dropdownTextHighlightStyle: {
     backgroundColor: 'red',
     color: '#000'
+  },
+  container: {
+    padding: 20
   }
-
 })
 export default Filter;

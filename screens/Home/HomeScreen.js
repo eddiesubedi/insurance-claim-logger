@@ -32,7 +32,9 @@ export default class HomeScreen extends Component {
           <CarouselList></CarouselList>
         </View>
         <View style={styles.btnContainer}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity 
+            style={styles.button}
+            onPress={() => this.props.navigation.navigate('CalimForm')}>
               <Icon size={30} name="plus" color="#fff"/>
             <Text style={styles.buttonText}>Start a new Claim</Text>
           </TouchableOpacity>
