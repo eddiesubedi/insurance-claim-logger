@@ -1,9 +1,9 @@
-import {  Dimensions} from 'react-native';
+import { Dimensions } from 'react-native';
 
 const { width: viewportWidth } = Dimensions.get('window');
 
-export function wp (percentage) {
-  const value = (percentage * viewportWidth) / 100;
+export function wp(percentage) {
+  const value = percentage * viewportWidth / 100;
   return Math.round(value);
 }
 export const itemHorizontalMargin = wp(1.5);

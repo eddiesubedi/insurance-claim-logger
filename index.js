@@ -3,9 +3,9 @@ import App from './App';
 import { YellowBox } from 'react-native';
 
 YellowBox.ignoreWarnings([
-    'Warning: componentWillMount is deprecated',
-    'Warning: componentWillReceiveProps is deprecated',
-    'Warning: Module RCTImageLoader requires main queue setup since it overrides',
-  ]);
-  
+  'Warning: componentWillMount is deprecated',
+  'Warning: componentWillReceiveProps is deprecated',
+  'Warning: Module RCTImageLoader requires main queue setup since it overrides',
+]);
+console.disableYellowBox = true;
 AppRegistry.registerComponent('dhadjustingclaimlog', () => App);

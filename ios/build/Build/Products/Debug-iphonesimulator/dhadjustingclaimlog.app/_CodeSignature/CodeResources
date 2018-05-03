@@ -4,6 +4,10 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Arimo-Bold.ttf</key>
+		<data>
+		MB46ctozji6QUVyhf7oh2sttyaY=
+		</data>
 		<key>Arimo-Regular.ttf</key>
 		<data>
 		jvOaaHMnkJEQR3A+7ZCXb9D0DEU=
@@ -75,7 +79,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Ote0gznxeyMPAD26dQL3ZOsiwW8=
+		6GAAS97vlJJoLKeCzKShOHS+Pbg=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -119,11 +123,15 @@
 		</data>
 		<key>PlugIns/dhadjustingclaimlogTests.xctest/dhadjustingclaimlogTests</key>
 		<data>
-		+P19CRSXtdUb5cncd/7Sdso8El8=
+		PgVDHlITitwkuyg4yVlhp/3oTK0=
 		</data>
 		<key>Poppins-Bold.ttf</key>
 		<data>
 		QTx8YYj1tzSCxxCX3Mhs/23tBfY=
+		</data>
+		<key>Poppins-Light.ttf</key>
+		<data>
+		lT/TRe6uEiaRorHiWoTz5KP1pAY=
 		</data>
 		<key>Poppins-SemiBold.ttf</key>
 		<data>
@@ -140,6 +148,17 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Arimo-Bold.ttf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			MB46ctozji6QUVyhf7oh2sttyaY=
+			</data>
+			<key>hash2</key>
+			<data>
+			ChUCAjBGrA07J6+MndHjwyTyvszEnyQ9BlrSw3l1jLg=
+			</data>
+		</dict>
 		<key>Arimo-Regular.ttf</key>
 		<dict>
 			<key>hash</key>
@@ -421,11 +440,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+P19CRSXtdUb5cncd/7Sdso8El8=
+			PgVDHlITitwkuyg4yVlhp/3oTK0=
 			</data>
 			<key>hash2</key>
 			<data>
-			bjttNPZT1sLev5ePiJEfqvfPUpqZ7yrNtz065jl0s6A=
+			zIC8+hYocrZ0MIyYnlzRiFw9MU8jen8DRoj4i2W/KI8=
 			</data>
 		</dict>
 		<key>Poppins-Bold.ttf</key>
@@ -437,6 +456,17 @@
 			<key>hash2</key>
 			<data>
 			a1ZrOAdZ3RlVQihWTG+y3AH89r/lzcW6KPHOOzYKn7U=
+			</data>
+		</dict>
+		<key>Poppins-Light.ttf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			lT/TRe6uEiaRorHiWoTz5KP1pAY=
+			</data>
+			<key>hash2</key>
+			<data>
+			fwKWm0y/phXXN9FZBD8fWnvSzmqOnJCA6BMqECRSjEc=
 			</data>
 		</dict>
 		<key>Poppins-SemiBold.ttf</key>

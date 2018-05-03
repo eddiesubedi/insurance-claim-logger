@@ -1,7 +1,6 @@
-import { StyleSheet, Dimensions, Platform } from 'react-native';
-import {sliderWidth, itemWidth, itemHorizontalMargin, wp} from '../../utils/carousel';
+import { StyleSheet, Platform } from 'react-native';
+import { itemWidth } from '../../utils/carousel';
 import Fonts from '../../utils/fonts';
-
 
 const colors = {
   black: '#1a1917',
@@ -9,7 +8,6 @@ const colors = {
 };
 
 const IS_IOS = Platform.OS === 'ios';
-const { height: viewportHeight } = Dimensions.get('window');
 const entryBorderRadius = 8;
 
 export default StyleSheet.create({
@@ -17,7 +15,7 @@ export default StyleSheet.create({
     width: '100%',
     height: '100%',
     shadowColor: 'black',
-    shadowOpacity: .1,
+    shadowOpacity: 0.1,
     shadowRadius: 10,
   },
   extraSpaceContainer: {
@@ -35,27 +33,27 @@ export default StyleSheet.create({
     backgroundColor: 'white',
     width: 40,
     height: 40,
-    borderRadius: 40/2,
+    borderRadius: 40 / 2,
     position: 'absolute',
     top: 0,
     right: 0,
     zIndex: 2,
     shadowColor: 'black',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: .1,
+    shadowOpacity: 0.1,
     shadowRadius: 10,
-    ...Platform.select ({
+    ...Platform.select({
       android: {
         borderWidth: 2,
         borderColor: '#eee',
-      }
+      },
     }),
     shadowColor: 'black',
-    shadowOpacity: .1,
+    shadowOpacity: 0.1,
     shadowRadius: 10,
   },
   closeIcon: {
-    fontSize: 20
+    fontSize: 20,
   },
   slideInnerContainer: {
     width: itemWidth,
@@ -73,7 +71,6 @@ export default StyleSheet.create({
   image: {
     ...StyleSheet.absoluteFillObject,
     resizeMode: 'cover',
-
   },
   textContainer: {
     justifyContent: 'center',
@@ -83,12 +80,12 @@ export default StyleSheet.create({
     backgroundColor: 'white',
     borderBottomLeftRadius: entryBorderRadius,
     borderBottomRightRadius: entryBorderRadius,
-    ...Platform.select ({
+    ...Platform.select({
       android: {
         borderWidth: 2,
         borderColor: '#eee',
-      }
-    })
+      },
+    }),
   },
   title: {
     color: colors.black,
@@ -101,33 +98,33 @@ export default StyleSheet.create({
     fontSize: 16,
     fontFamily: Fonts.Arimo,
     lineHeight: 22,
-    ...Platform.select ({
+    ...Platform.select({
       android: {
-        lineHeight: 28
-      }
-    })
+        lineHeight: 28,
+      },
+    }),
   },
   buttonRow: {
     display: 'flex',
-    flexDirection:'row',
-    marginTop:25 - entryBorderRadius
+    flexDirection: 'row',
+    marginTop: 25 - entryBorderRadius,
   },
   buttonContainer: {
     flex: 1,
     alignItems: 'flex-start',
 
-    display: 'flex'
+    display: 'flex',
   },
   sendButton: {
-    marginLeft: 'auto'
-  }, 
+    marginLeft: 'auto',
+  },
   btnText: {
     fontFamily: Fonts.MontserratSemiBold,
   },
   editText: {
-    color: '#3a6abe'
+    color: '#3a6abe',
   },
   sendText: {
-    color: '#4cae4a'
-  }
+    color: '#4cae4a',
+  },
 });

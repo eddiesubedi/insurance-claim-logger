@@ -9,6 +9,8 @@
 		<string>Arimo-Regular.ttf</string>
 		<string>Poppins-SemiBold.ttf</string>
 		<string>Poppins-Bold.ttf</string>
+		<string>Arimo-Bold.ttf</string>
+		<string>Poppins-Light.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>

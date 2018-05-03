@@ -52,6 +52,8 @@
 		0830AFA8B7FD4EFA894B5F27 /* Arimo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 073B554C6CAF450A9F2E8085 /* Arimo-Regular.ttf */; };
 		39551627F99246BDA974F176 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2571B84A9E844E5AC5C5CCD /* Poppins-SemiBold.ttf */; };
 		BC8DB97510EC4BB0925DED41 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F275ED7DDC6B4743B0BC3C64 /* Poppins-Bold.ttf */; };
+		8D55B0B1445A4299B7FFEFF8 /* Arimo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6ED6DB9E3C604F089D99A4BB /* Arimo-Bold.ttf */; };
+		953673A966F945DAAED0A381 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70C89C1A9C344CDAB5A13CF /* Poppins-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -380,6 +382,8 @@
 		073B554C6CAF450A9F2E8085 /* Arimo-Regular.ttf */ = {isa = PBXFileReference; name = "Arimo-Regular.ttf"; path = "../assets/fonts/Arimo-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		A2571B84A9E844E5AC5C5CCD /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; name = "Poppins-SemiBold.ttf"; path = "../assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		F275ED7DDC6B4743B0BC3C64 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; name = "Poppins-Bold.ttf"; path = "../assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6ED6DB9E3C604F089D99A4BB /* Arimo-Bold.ttf */ = {isa = PBXFileReference; name = "Arimo-Bold.ttf"; path = "../assets/fonts/Arimo-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C70C89C1A9C344CDAB5A13CF /* Poppins-Light.ttf */ = {isa = PBXFileReference; name = "Poppins-Light.ttf"; path = "../assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -669,6 +673,8 @@
 				073B554C6CAF450A9F2E8085 /* Arimo-Regular.ttf */,
 				A2571B84A9E844E5AC5C5CCD /* Poppins-SemiBold.ttf */,
 				F275ED7DDC6B4743B0BC3C64 /* Poppins-Bold.ttf */,
+				6ED6DB9E3C604F089D99A4BB /* Arimo-Bold.ttf */,
+				C70C89C1A9C344CDAB5A13CF /* Poppins-Light.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1146,6 +1152,8 @@
 				0830AFA8B7FD4EFA894B5F27 /* Arimo-Regular.ttf in Resources */,
 				39551627F99246BDA974F176 /* Poppins-SemiBold.ttf in Resources */,
 				BC8DB97510EC4BB0925DED41 /* Poppins-Bold.ttf in Resources */,
+				8D55B0B1445A4299B7FFEFF8 /* Arimo-Bold.ttf in Resources */,
+				953673A966F945DAAED0A381 /* Poppins-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
