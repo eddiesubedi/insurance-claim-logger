@@ -119,11 +119,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     padding: 20,
+    paddingBottom: 0,
   },
   buttonRow: {
     display: 'flex',
     flexDirection: 'row',
     padding: 10,
+    paddingTop: 0,
   },
   buttonContainer: {
     flex: 1,

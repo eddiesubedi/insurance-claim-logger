@@ -7,6 +7,7 @@ import {
   ScrollView,
   ImageBackground,
 } from 'react-native';
+import TouchableOpacityPreventDoubleTap from '../../components/TouchableOpacityPreventDoubleTap/TouchableOpacityPreventDoubleTap';
 
 import Input from '../../components/Input/Input';
 import DescriptionCard from '../../components/DescriptionCard/DescriptionCard';
@@ -30,6 +31,11 @@ export default class ClaimFormScreen extends Component {
       </TouchableOpacity>
     ),
   });
+
+  navigateScreen = () => {
+    this.props.navigation.navigate('Description');
+  };
+
   render() {
     return (
       <ScrollView style={styles.mainContainer}>
@@ -53,21 +59,30 @@ export default class ClaimFormScreen extends Component {
             </View>
           </View>
           <Text style={styles.heading}>Pictures</Text>
-          <View style={styles.addNewContainer}>
+          <TouchableOpacityPreventDoubleTap
+            style={styles.addNewContainer}
+            onPress={this.navigateScreen}
+          >
             <ImageBackground
-              source={require('./camera.png')}
+              source={require('../../assets/images/camera_icon.png')}
               resizeMode="contain"
+              opacity={0.5}
               style={styles.backgroundImage}
             >
               <Text style={styles.newText}>Tap to add</Text>
-              <Text style={styles.newText}>Picture</Text>
+              <Text style={styles.newText}>picture</Text>
             </ImageBackground>
-          </View>
+          </TouchableOpacityPreventDoubleTap>
           <View style={styles.descriptionCard}>
             <DescriptionCard
               number={1}
               description="The entire houe flod and water damage everthing. Everything needs to be replaced"
             />
+          </View>
+          <View style={styles.saveButtonContainer}>
+            <TouchableOpacity onPress={null} style={styles.saveButton}>
+              <Text style={styles.saveBtnText}>Save</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
@@ -112,6 +127,7 @@ const styles = StyleSheet.create({
   addNewContainer: {
     backgroundColor: 'white',
     marginTop: 10,
+    padding: 10,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -135,5 +151,23 @@ const styles = StyleSheet.create({
   },
   descriptionCard: {
     marginBottom: 20,
+  },
+  saveButtonContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  saveButton: {
+    backgroundColor: '#1C51FF',
+    width: '70%',
+    paddingTop: 15,
+    paddingBottom: 15,
+    borderRadius: 50,
+  },
+  saveBtnText: {
+    color: 'white',
+    fontFamily: Fonts.MontserratSemiBold,
+    fontSize: 24,
+    textAlign: 'center',
   },
 });

@@ -3,6 +3,8 @@ import { StackNavigator } from 'react-navigation';
 
 import HomeScreen from './screens/Home/HomeScreen';
 import ClaimFormScreen from './screens/ClaimForm/ClaimFormScreen';
+import DescriptionScreen from './screens/Description/DescriptionScreen';
+
 import LogoTitle from './components/header/LogoTitle';
 
 export default StackNavigator(
@@ -15,6 +17,9 @@ export default StackNavigator(
     },
     CalimForm: {
       screen: ClaimFormScreen,
+    },
+    Description: {
+      screen: DescriptionScreen,
     },
   },
   {
