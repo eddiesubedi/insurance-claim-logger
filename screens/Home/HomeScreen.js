@@ -8,14 +8,31 @@ import CarouselList from '../../components/Carousel/CarouselList';
 import Filter from '../../components/Filter/Filter';
 import Fonts from '../../utils/fonts';
 import TouchableOpacityPreventDoubleTap from '../../components/TouchableOpacityPreventDoubleTap/TouchableOpacityPreventDoubleTap';
-
 import { itemWidth } from '../../utils/carousel';
+import api from '../../utils/api';
 
 export default class HomeScreen extends Component {
+  state = {
+    data: null,
+  }
+  componentDidMount() {
+    api.getClaims((claims) => {
+      this.setState({ data: claims });
+    });
+  }
   navigateScreen = () => {
     this.props.navigation.navigate('CalimForm');
   };
-
+  renderCaroselList = () => {
+    const { data } = this.state;
+    if (!data && typeof data === 'object') {
+      return <Text>Loading...</Text>;
+    }
+    if (data.length === 0) {
+      return <Text>No New Claims</Text>;
+    }
+    return <CarouselList data={this.state.data} />;
+  }
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -33,7 +50,9 @@ export default class HomeScreen extends Component {
           </View>
         </View>
         <View style={styles.cards}>
-          <CarouselList />
+          {
+            this.renderCaroselList()
+          }
         </View>
         <View style={styles.btnContainer}>
           <TouchableOpacityPreventDoubleTap style={styles.button} onPress={this.navigateScreen}>

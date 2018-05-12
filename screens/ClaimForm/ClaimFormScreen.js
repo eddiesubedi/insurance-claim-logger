@@ -12,6 +12,7 @@ import TouchableOpacityPreventDoubleTap from '../../components/TouchableOpacityP
 import Input from '../../components/Input/Input';
 import DescriptionCard from '../../components/DescriptionCard/DescriptionCard';
 import Fonts from '../../utils/fonts';
+import api from '../../utils/api';
 
 export default class ClaimFormScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -32,6 +33,33 @@ export default class ClaimFormScreen extends Component {
     ),
   });
 
+  state = {
+    dbData: {
+      id: null,
+      claim: '',
+      insured: '',
+      lossLocation: '',
+      dateOfLoss: '',
+      takenBy: '',
+    },
+  }
+  setStateForInput = (key, value) => {
+    const obj = {};
+    obj[key] = value;
+
+    const newState = { ...this.state };
+    newState.dbData = { ...newState.dbData, ...obj };
+
+    this.setState(newState);
+  }
+  saveClaims = () => {
+    const trimmedWhiteSpaceState = JSON.parse(JSON.stringify(this.state.dbData).replace(/"\s+|\s+"/g, '"'));
+    if (!Object.values(trimmedWhiteSpaceState).includes('')) {
+      api.createClaim(this.state.dbData);
+    } else {
+      alert('Fill out everything');
+    }
+  }
   navigateScreen = () => {
     this.props.navigation.navigate('Description');
   };
@@ -39,23 +67,44 @@ export default class ClaimFormScreen extends Component {
   render() {
     return (
       <ScrollView style={styles.mainContainer}>
+        <View />
         <View style={styles.container}>
           <Text style={styles.heading}>Claim Info</Text>
           <View style={styles.formContainer}>
             <View style={styles.inputContainer}>
-              <Input title="Claim" />
+              <Input
+                title="Claim"
+                onChangeText={claim => this.setStateForInput('claim', claim)}
+                returnKeyType="next"
+              />
             </View>
             <View style={styles.inputContainer}>
-              <Input title="Insured" />
+              <Input
+                title="Insured"
+                onChangeText={insured => this.setStateForInput('insured', insured)}
+                ref={(input) => { this.secondTextInput = input; }}
+              />
             </View>
             <View style={styles.inputContainer}>
-              <Input title="Loss Location" />
+              <Input
+                title="Loss Location"
+                onChangeText={lossLocation => this.setStateForInput('lossLocation', lossLocation)}
+                ref={(input) => { this.lossLocationInputRef = input; }}
+              />
             </View>
             <View style={styles.inputContainer}>
-              <Input title="Date of Loss" />
+              <Input
+                title="Date of Loss"
+                onChangeText={dateOfLoss => this.setStateForInput('dateOfLoss', dateOfLoss)}
+                ref={(input) => { this.dateOfLossInputRef = input; }}
+              />
             </View>
             <View style={styles.inputContainer}>
-              <Input title="Taken By" />
+              <Input
+                title="Taken By"
+                onChangeText={takenBy => this.setStateForInput('takenBy', takenBy)}
+                ref={(input) => { this.takenByInputRef = input; }}
+              />
             </View>
           </View>
           <Text style={styles.heading}>Pictures</Text>
@@ -80,7 +129,7 @@ export default class ClaimFormScreen extends Component {
             />
           </View>
           <View style={styles.saveButtonContainer}>
-            <TouchableOpacity onPress={null} style={styles.saveButton}>
+            <TouchableOpacity onPress={this.saveClaims} style={styles.saveButton}>
               <Text style={styles.saveBtnText}>Save</Text>
             </TouchableOpacity>
           </View>

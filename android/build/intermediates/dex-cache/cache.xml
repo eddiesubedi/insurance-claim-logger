@@ -3,201 +3,201 @@
 
     <item
         is-multidex="false"
-        jar="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.3.0_6677fb6993a9fcd0c6bde69941cf44f3df3335c9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.3.0_941b0f9cd2a74e7aab7b71755dc2c3b5b8b82186.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.3.0_65417d4b2868a44b4050d1b288dbfbbf2bcddf57.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.54.0/jars/libs/infer-annotations-4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_93f992efae25db1e6555a2fcc439dfaaabbf84ca.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/newtanquinlan/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_2bd64744ac2be5bdb3a55944a154933bffc2bce6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.3.0_f4f73b4a07ea597a816d907d33f6ab805a793cb1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/newtanquinlan/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jar="C:\Users\adity\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_df4324910ba4df0de59bbf3c7d529b34f22cbfbf.jar" />
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\javax.inject-1_1ce2a1f02c620edb9571145e9e0f32e2af0c211b.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/newtanquinlan/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jar="C:\Users\adity\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_9d4bdc2e6c72cb15fd76ac29f3dc060e10ff438b.jar" />
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_5587b265e7cc8e573bbd8365050d57e61f227afa.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/newtanquinlan/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
+        jar="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\1.3.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_afe8973c313258948d97db93e438bf5562bab7c7.jar" />
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-base-1.3.0_470d25f9f38437fa4daf78dc672cb655aba62255.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_da3a625cc5a199623d2c40763a52f6e1d7d70272.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.0.1_6e743d6b0366bd0e55ed3ae3f51108ad47df7381.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/newtanquinlan/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_ddd787ecad18f0f04e4ab6d086f3a0203e9f0547.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1_44238a13bc49ac818d4d8cc07deec680dd9736e9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_dae95df06d17d18859431a917c5288f93ed1e685.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.3.0_cb7b538d542f70db0a3a69cd1cc23ab5680b7a60.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_7b68e3fc5d0c1edeee9e2ffa93c49e43cd494503.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/exploded-aar/dhadjustingclaimlog/react-native-vector-icons/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="279750fed3c920d06351dbf32889c1b48203c7ad">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/dhadjustingclaimlog-react-native-vector-icons-unspecified_2636a2c9dcb7eecb722f1de9b74fd9a9511a6f56.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/newtanquinlan/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_5c694dc998402c5e4463950802237dd85b961bba.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/newtanquinlan/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1_bd01a8e69fbd625a2fba1b43eb47176d0189f741.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.54.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="9bc5c658348a96fc5110ac2a8785920bb9417c07">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.54.0_fa93d4a87c34009453037b80b99b286ab5b07da5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_836709f86d4fe683c3dec79146076fec05e066d2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/newtanquinlan/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
+        jar="C:\Users\adity\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.6.0\69edde9fc4b01c9fd51d25b83428837478c27254\okhttp-3.6.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
-        <dex dex="/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/pre-dexed/debug/okhttp-3.6.0_06d505227a023ad7bf47a37ce5f8025cbb092a22.jar" />
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\okhttp-3.6.0_3804e1677529da5725ddfbe8b0e1c16bd38d68c9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1_1720a8ab0a29556025da61c25df7138114e464d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.54.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9bc5c658348a96fc5110ac2a8785920bb9417c07">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\com.facebook.react-react-native-0.54.0_bde807ca6ac7134d58887f2c809b791c5e43a35b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-1.3.0_adcd375cfff27879a2321a4de3bbffd8aa0164b5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fresco\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fresco-1.3.0_525cee868b67a3e5950e7ba9df9e5b0571db9e0f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\exploded-aar\com.facebook.fresco\drawee\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-drawee-1.3.0_55b0bf3634456cdf8945fafe04032bab9d88069c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\exploded-aar\com.facebook.fbui.textlayoutbuilder\textlayoutbuilder\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_eaf815797d94b1ed88e136d37aefb691aa3ffd6c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\adity\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\okio-1.13.0_d921b1604abc0f986a3247d9ee1ee7d36158b531.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.0.1_57ffd6ab4c0501ebd34d83aa8cf9e8fb8d6119a3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-okhttp3\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-okhttp3-1.3.0_f4b23540fe0e4e93733aa12088abd6632f997047.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\adity\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1_49476019ff91fb561acca6d25a94e2c32cd5281c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fbcore-1.3.0_98b1de5ebaa4def3f109d33262adfe311427b0bc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\com.facebook.soloader-soloader-0.1.0_865e2b82a5295b65cd1463074781a262c5b20ecf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.0.1_d0afdbdc42668a9bead49163414498dd3eef2696.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\adity\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp-urlconnection\3.6.0\3f9b16b774f2c36cfd86dd2053d0b3059531dacc\okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\okhttp-urlconnection-3.6.0_9ff90936112fd4480973ce8440eca738625d112b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.54.0\jars\libs\infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_761954e80a1bc8df012f7f68f38792601236ed41.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\exploded-aar\dhadjustingclaimlog\react-native-vector-icons\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="279750fed3c920d06351dbf32889c1b48203c7ad">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\dhadjustingclaimlog-react-native-vector-icons-unspecified_bad49269cba2ee145d545a84180d68710cfa0d52.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\adity\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.0\5871fb60dc68d67da54a663c3fd636a10a532948\jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\jsr305-3.0.0_fbca8fffa1144cdf6e2a01fec78d58ae8b21e4f0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\adity\.gradle\caches\modules-2\files-2.1\com.facebook.fbui.textlayoutbuilder\staticlayout-proxy\1.0\f162442a19fff13995fbd51ba414d9ee05579080\staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="C:\Users\adity\Documents\workspace\dh-adjuster-claim-logger\android\app\build\intermediates\pre-dexed\debug\staticlayout-proxy-1.0_11722d8143156f659ebed64bac144e1b57a363c1.jar" />
     </item>
 
 </items>

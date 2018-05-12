@@ -1,15 +1,16 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
-import TextLetterSpacing from 'react-native-letter-spacing';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 
 import styles from './carouselItem.style';
 
 const CarouselItem = (props) => {
   const {
-    data: { title, subtitle, illustration },
+    data: {
+      id, claim, insured, lossLocation, dateOfLoss, takenBy,
+    },
   } = props;
 
-  const image = () => <Image source={{ uri: illustration }} style={styles.image} />;
+  const image = () => <Image source={{ uri: 'https://i.imgur.com/SsJmZ9jl.jpg' }} style={styles.image} />;
   // onPress={() => { alert(`You've clicked '${title}'`); }}
   return (
     <View style={styles.slideInnerContainer}>
@@ -20,11 +21,11 @@ const CarouselItem = (props) => {
         <View style={styles.container}>
           <View style={styles.imageContainer}>{image()}</View>
           <View style={styles.textContainer}>
-            <TextLetterSpacing letterSpacing={2.5} style={styles.title}>
-              {`${title}`}
-            </TextLetterSpacing>
+            <Text style={styles.title}>
+              {claim}
+            </Text>
             <Text style={styles.subtitle} numberOfLines={2}>
-              {subtitle}
+              {insured}
             </Text>
             <View style={styles.buttonRow}>
               <View style={styles.buttonContainer}>
