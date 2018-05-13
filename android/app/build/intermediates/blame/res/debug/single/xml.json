@@ -1,6 +1,14 @@
 [
     {
-        "merged": "C:\\Users\\adity\\Documents\\workspace\\dh-adjuster-claim-logger\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
-        "source": "C:\\Users\\adity\\Documents\\workspace\\dh-adjuster-claim-logger\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.54.0\\res\\xml\\preferences.xml"
+        "merged": "/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/res/merged/debug/xml/provider_paths.xml",
+        "source": "/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/exploded-aar/dhadjustingclaimlog/react-native-image-picker/unspecified/res/xml/provider_paths.xml"
+    },
+    {
+        "merged": "/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/res/merged/debug/xml/preferences.xml",
+        "source": "/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.54.0/res/xml/preferences.xml"
+    },
+    {
+        "merged": "/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/C:\\Users\\adity\\Documents\\workspace\\dh-adjuster-claim-logger\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
+        "source": "/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/C:\\Users\\adity\\Documents\\workspace\\dh-adjuster-claim-logger\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.54.0\\res\\xml\\preferences.xml"
     }
 ]

@@ -1,6 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\adity\\Documents\\workspace\\dh-adjuster-claim-logger\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
-        "source": "C:\\Users\\adity\\Documents\\workspace\\dh-adjuster-claim-logger\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/C:\\Users\\adity\\Documents\\workspace\\dh-adjuster-claim-logger\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
+        "source": "/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/C:\\Users\\adity\\Documents\\workspace\\dh-adjuster-claim-logger\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
+        "source": "/Users/newtanquinlan/Documents/workspace/dh-adjuster-claim-logger/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     }
 ]
