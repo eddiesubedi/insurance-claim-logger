@@ -16,12 +16,19 @@ export default class HomeScreen extends Component {
     data: null,
   }
   componentDidMount() {
+    this.getClaims();
+  }
+  getClaims = () => {
     api.getClaims((claims) => {
-      this.setState({ data: claims });
+      this.setState({ ...this.state, data: claims });
     });
   }
+  reloadClaims = (claims) => {
+    this.setState({ ...this.state, data: claims });
+  };
+
   navigateScreen = () => {
-    this.props.navigation.navigate('CalimForm');
+    this.props.navigation.navigate('CalimForm', { reloadClaims: this.reloadClaims });
   };
   renderCaroselList = () => {
     const { data } = this.state;

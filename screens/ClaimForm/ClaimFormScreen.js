@@ -14,6 +14,7 @@ import DescriptionCard from '../../components/DescriptionCard/DescriptionCard';
 import Fonts from '../../utils/fonts';
 import api from '../../utils/api';
 
+
 export default class ClaimFormScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
     headerLeft: (
@@ -43,6 +44,7 @@ export default class ClaimFormScreen extends Component {
       takenBy: '',
     },
   }
+
   setStateForInput = (key, value) => {
     const obj = {};
     obj[key] = value;
@@ -55,7 +57,13 @@ export default class ClaimFormScreen extends Component {
   saveClaims = () => {
     const trimmedWhiteSpaceState = JSON.parse(JSON.stringify(this.state.dbData).replace(/"\s+|\s+"/g, '"'));
     if (!Object.values(trimmedWhiteSpaceState).includes('')) {
-      api.createClaim(this.state.dbData);
+      api.createClaim(this.state.dbData, (claims) => {
+        this.props.navigation.goBack();
+        this.props.navigation.state.params.reloadClaims(claims);
+      });
+
+
+      // this.props.navigation.navigate('Home', { reloadClaims: true });
     } else {
       alert('Fill out everything');
     }

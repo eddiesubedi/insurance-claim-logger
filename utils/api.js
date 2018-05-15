@@ -16,12 +16,13 @@ const api = (() => {
     }
   }
 
-  function setClaim(claim) {
+  function setClaim(claim, callback) {
     getClaims((claims) => {
       const tempClaim = claim;
       tempClaim.id = shortid.generate();
       claims.push(tempClaim);
       AsyncStorage.setItem(CLAIMS_KEY, JSON.stringify(claims));
+      callback(claims);
     });
   }
   function findClaimIndex(claims, id) {

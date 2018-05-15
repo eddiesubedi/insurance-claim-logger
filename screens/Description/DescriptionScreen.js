@@ -64,6 +64,12 @@ export default class HomeScreen extends Component {
       this.onImageResponse(response);
     });
   };
+
+  retakeImage = () => {
+    ImagePicker.showImagePicker(options, (response) => {
+      this.onImageResponse(response);
+    });
+  }
   navigateScreen = () => {
     this.props.navigation.navigate('CalimForm');
   };
@@ -106,16 +112,19 @@ export default class HomeScreen extends Component {
               </View>
             </View>
           ) : (
-            <Image
-              style={styles.pickedImage}
-              source={this.state.imageEncodedData}
-              resizeMode="contain"
-            />
+            <View>
+              <Text style={styles.pickedImageText}>Picture</Text>
+              <Image
+                style={styles.pickedImage}
+                source={this.state.imageEncodedData}
+                resizeMode="cover"
+              />
+              <TouchableOpacity style={styles.retakeBtn} onPress={this.retakeImage}>
+                <Text style={styles.retakeBtnText}>Retake Picture</Text>
+              </TouchableOpacity>
+            </View>
           )}
           <Text style={styles.heading}>Add Description</Text>
-          <View style={styles.inputContainer}>
-            <TextInput multiline placeholder="Tap to add Description" />
-          </View>
           <View style={styles.inputContainer}>
             <TextInput multiline placeholder="Tap to add Description" />
           </View>
@@ -138,12 +147,10 @@ const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: '#f6f7f9',
     flex: 1,
-    backgroundColor: 'red',
   },
   container: {
     paddingLeft: 20,
     paddingRight: 20,
-    backgroundColor: 'blue',
   },
   contentContainer: {
     flex: 1,
@@ -153,13 +160,14 @@ const styles = StyleSheet.create({
     color: '#7c8ea9',
     fontFamily: Fonts.ArimoBold,
     fontSize: 16,
+    marginTop: 20,
   },
   pictureContainer: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 20,
+    marginTop: 10,
     marginBottom: 40,
   },
   icon: {
@@ -200,15 +208,36 @@ const styles = StyleSheet.create({
   inputContainer: {
     backgroundColor: 'white',
     borderRadius: 10,
-    marginTop: 20,
+    marginTop: 10,
     height: 250,
-    padding: 10,
+    paddingLeft: 15,
+    paddingRight: 15,
     shadowOffset: { width: 0, height: 6 },
     shadowOpacity: 0.1,
     shadowRadius: 10,
   },
+  pickedImageText: {
+    color: '#7c8ea9',
+    fontFamily: Fonts.ArimoBold,
+    fontSize: 16,
+    marginTop: 10,
+    marginBottom: 10,
+  },
   pickedImage: {
+    borderRadius: 10,
     width: '100%',
-    height: '50%',
+    height: 200,
+  },
+  retakeBtn: {
+    backgroundColor: '#F04950',
+    alignSelf: 'flex-start',
+    marginTop: 15,
+    padding: 10,
+    borderRadius: 50,
+  },
+  retakeBtnText: {
+    color: 'white',
+    fontSize: 16,
+    fontFamily: Fonts.MontserratSemiBold,
   },
 });
