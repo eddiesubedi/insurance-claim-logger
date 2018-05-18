@@ -31,14 +31,31 @@ export default class HomeScreen extends Component {
       </TouchableOpacity>
     ),
     headerRight: (
-      <TouchableOpacity style={styles.buttonContainer}>
+      <TouchableOpacity
+        onPress={navigation.state.params.navigateScreen}
+        style={styles.buttonContainer}
+      >
         <Text style={styles.btnText}>Save</Text>
       </TouchableOpacity>
     ),
   });
   state = {
     imageEncodedData: null,
+    description: '',
   };
+  componentDidMount() {
+    this.props.navigation.setParams({
+      navigateScreen: this.navigateScreen,
+    });
+    const { description } = this.props.navigation.state.params;
+    const { edit } = this.props.navigation.state.params;
+    if (edit) {
+      this.setState({
+        imageEncodedData: { uri: description.uri },
+        description: description.text,
+      });
+    }
+  }
   onImageResponse = (response) => {
     if (response.didCancel) {
       console.log('User cancelled image picker');
@@ -49,6 +66,7 @@ export default class HomeScreen extends Component {
     } else {
       const source = { uri: `data:image/jpeg;base64,${response.data}`, isStatic: true };
       this.setState({
+        ...this.state,
         imageEncodedData: source,
       });
     }
@@ -71,7 +89,23 @@ export default class HomeScreen extends Component {
     });
   }
   navigateScreen = () => {
-    this.props.navigation.navigate('CalimForm');
+    this.props.navigation.goBack();
+
+    if (this.props.navigation.state.params.edit) {
+      const { description } = this.props.navigation.state.params;
+      this.props.navigation.state.params.editDescription(
+        description.id,
+        this.state.imageEncodedData.uri,
+        this.state.description,
+      );
+    } else {
+      this.props.navigation.state.params.addDescription(
+        this.state.imageEncodedData.uri,
+        this.state.description,
+      );
+    }
+
+    // this.props.navigation.navigate('CalimForm');
   };
   render() {
     return (
@@ -126,7 +160,12 @@ export default class HomeScreen extends Component {
           )}
           <Text style={styles.heading}>Add Description</Text>
           <View style={styles.inputContainer}>
-            <TextInput multiline placeholder="Tap to add Description" />
+            <TextInput
+              multiline
+              placeholder="Tap to add Description"
+              onChangeText={description => this.setState({ ...this.state, description })}
+              value={this.state.description}
+            />
           </View>
         </ScrollView>
       </KeyboardAvoidingView>

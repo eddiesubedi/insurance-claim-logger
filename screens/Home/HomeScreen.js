@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, SafeAreaView, StyleSheet } from 'react-native';
+import { Text, View, SafeAreaView, StyleSheet, Alert } from 'react-native';
 import TextLetterSpacing from 'react-native-letter-spacing';
 import Icon from 'react-native-vector-icons/Octicons';
 
@@ -28,8 +28,30 @@ export default class HomeScreen extends Component {
   };
 
   navigateScreen = () => {
-    this.props.navigation.navigate('CalimForm', { reloadClaims: this.reloadClaims });
+    this.props.navigation.navigate('CalimForm', { reloadClaims: this.reloadClaims, id: null });
   };
+
+  navigateEditScreen = (id) => {
+    this.props.navigation.navigate('CalimForm', { reloadClaims: this.reloadClaims, id });
+  }
+
+  deleteClaim = (id) => {
+    Alert.alert(
+      'Are you sure?', '',
+      [
+        { text: 'Cancel' },
+        {
+          text: 'Yes',
+          onPress: () => {
+            api.removeClaim(id, (claims) => {
+              this.setState({ ...this.state, data: claims });
+            });
+          },
+        },
+      ],
+    );
+  }
+
   renderCaroselList = () => {
     const { data } = this.state;
     if (!data && typeof data === 'object') {
@@ -38,7 +60,7 @@ export default class HomeScreen extends Component {
     if (data.length === 0) {
       return <Text>No New Claims</Text>;
     }
-    return <CarouselList data={this.state.data} />;
+    return <CarouselList data={this.state.data} deleteClaim={this.deleteClaim} navigateToClaim={this.navigateEditScreen} />;
   }
   render() {
     return (
@@ -116,12 +138,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   button: {
-    backgroundColor: '#d94046',
-    paddingTop: 20,
-    paddingBottom: 20,
-    paddingLeft: 30,
-    paddingRight: 30,
-    borderRadius: 30,
+    backgroundColor: '#f04950',
+    paddingTop: 15,
+    paddingBottom: 15,
+    paddingLeft: 25,
+    paddingRight: 25,
+    borderRadius: 50,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',

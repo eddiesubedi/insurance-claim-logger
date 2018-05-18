@@ -6,7 +6,7 @@ import CarouselItem from './CarouselItem';
 import { sliderWidth, itemWidth } from '../../utils/carousel';
 
 const CarouselList = (props) => {
-  const renderCards = data => <CarouselItem data={data.item} />;
+  const renderCards = data => <CarouselItem data={data.item} deleteClaim={props.deleteClaim} navigateToClaim={props.navigateToClaim} />;
   return (
     <Carousel
       data={props.data}

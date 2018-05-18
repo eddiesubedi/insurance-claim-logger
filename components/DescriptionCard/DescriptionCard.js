@@ -1,34 +1,9 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
-import Spelling from 'spelling';
-import shortid from 'shortid';
 
-import dictionary from '../../utils/en_US';
 import Fonts from '../../utils/fonts';
 
-const dict = new Spelling(dictionary);
-const spellCheck = (description) => {
-  const words = description.split(' ');
-  const misspelledwordIndex = [];
-  for (let i = 0; i < words.length; i += 1) {
-    const word = words[i].replace(/[.,/#!"$%^&*;:{}=\-_`~()]/g, '');
-    const isSpelledCorrectly = dict.lookup(word).found;
-    if (!isSpelledCorrectly) {
-      misspelledwordIndex.push(i);
-    }
-  }
-  return words.map((word, i) => {
-    if (misspelledwordIndex.includes(i)) {
-      return (
-        <Text style={[styles.description, styles.misspelled]} key={shortid.generate()}>
-          {`${word} `}
-        </Text>
-      );
-    }
-    return <Text style={styles.description} key={shortid.generate()}>{`${word} `}</Text>;
-  });
-};
 
 const DescriptionCard = props => (
   <View style={styles.container}>
@@ -37,16 +12,20 @@ const DescriptionCard = props => (
         <Text style={styles.number}>{props.number}</Text>
       </View>
       <Image
-        source={require('./waterdamage.jpg')}
+        source={props.image}
         style={styles.image}
         resizeMode="cover"
         borderTopLeftRadius={10}
         borderTopRightRadius={10}
       />
-      <View style={styles.descriptionContainer}>{spellCheck(props.description)}</View>
+      <View style={styles.descriptionContainer}>
+        <Text>
+          {props.children}
+        </Text>
+      </View>
       <View style={styles.buttonRow}>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={null} style={styles.button}>
+          <TouchableOpacity onPress={props.navigateEditScreen.bind(this, props.description)} style={styles.button}>
             <Text style={styles.btnText}>Edit</Text>
           </TouchableOpacity>
         </View>
@@ -62,7 +41,8 @@ const DescriptionCard = props => (
 
 DescriptionCard.propTypes = {
   number: PropTypes.number.isRequired,
-  description: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 const styles = StyleSheet.create({

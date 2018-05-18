@@ -11,13 +11,12 @@ const CarouselItem = (props) => {
   } = props;
 
   const image = () => <Image source={{ uri: 'https://i.imgur.com/SsJmZ9jl.jpg' }} style={styles.image} />;
-  // onPress={() => { alert(`You've clicked '${title}'`); }}
   return (
     <View style={styles.slideInnerContainer}>
       <View style={styles.extraSpaceContainer}>
-        <View style={styles.close}>
+        <TouchableOpacity style={styles.close} onPress={props.deleteClaim.bind(this, id)}>
           <Text style={styles.closeIcon}>X</Text>
-        </View>
+        </TouchableOpacity>
         <View style={styles.container}>
           <View style={styles.imageContainer}>{image()}</View>
           <View style={styles.textContainer}>
@@ -29,7 +28,7 @@ const CarouselItem = (props) => {
             </Text>
             <View style={styles.buttonRow}>
               <View style={styles.buttonContainer}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={props.navigateToClaim.bind(this, id)}>
                   <Text style={[styles.btnText, styles.editText]}>Edit</Text>
                 </TouchableOpacity>
               </View>

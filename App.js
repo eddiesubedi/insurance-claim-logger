@@ -7,6 +7,8 @@ import DescriptionScreen from './screens/Description/DescriptionScreen';
 
 import LogoTitle from './components/header/LogoTitle';
 
+import './utils/ReactotronConfig';
+
 export default StackNavigator(
   {
     Home: {

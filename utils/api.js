@@ -29,21 +29,23 @@ const api = (() => {
     return claims.findIndex(c => c.id === id);
   }
 
-  function editClaim(claim) {
+  function editClaim(claim, callback) {
     getClaims((claims) => {
       const index = findClaimIndex(claims, claim.id);
       const tempClaims = claims;
       tempClaims[index] = claim;
       AsyncStorage.setItem(CLAIMS_KEY, JSON.stringify(tempClaims));
+      callback(claims);
     });
   }
 
-  function removeClaim(id) {
+  function removeClaim(id, callback) {
     getClaims((claims) => {
       const index = findClaimIndex(claims, id);
       const tempClaims = claims;
       tempClaims.splice(index, 1);
       AsyncStorage.setItem(CLAIMS_KEY, JSON.stringify(tempClaims));
+      callback(tempClaims);
     });
   }
   function removeAllClaims() {

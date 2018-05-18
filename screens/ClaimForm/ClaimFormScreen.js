@@ -7,12 +7,14 @@ import {
   ScrollView,
   ImageBackground,
 } from 'react-native';
+import shortid from 'shortid';
 import TouchableOpacityPreventDoubleTap from '../../components/TouchableOpacityPreventDoubleTap/TouchableOpacityPreventDoubleTap';
-
 import Input from '../../components/Input/Input';
 import DescriptionCard from '../../components/DescriptionCard/DescriptionCard';
 import Fonts from '../../utils/fonts';
 import api from '../../utils/api';
+import dictionary from '../../utils/en_US';
+import spellCheck from '../../utils/spellCheck';
 
 
 export default class ClaimFormScreen extends Component {
@@ -36,13 +38,35 @@ export default class ClaimFormScreen extends Component {
 
   state = {
     dbData: {
-      id: null,
+      id: this.props.navigation.state.params.id,
       claim: '',
       insured: '',
       lossLocation: '',
       dateOfLoss: '',
       takenBy: '',
+      descriptions: [],
     },
+  }
+
+  componentDidMount() {
+    const { id } = this.state.dbData;
+    if (!(!id && typeof id === 'object')) {
+      api.getClaims((claims) => {
+        const claim = claims.find(tempClaim => tempClaim.id === id);
+        this.setState({
+          ...this.state,
+          dbData: {
+            ...this.state.dbData,
+            claim: claim.claim,
+            insured: claim.insured,
+            lossLocation: claim.lossLocation,
+            dateOfLoss: claim.dateOfLoss,
+            takenBy: claim.takenBy,
+            descriptions: claim.descriptions,
+          },
+        });
+      });
+    }
   }
 
   setStateForInput = (key, value) => {
@@ -54,23 +78,68 @@ export default class ClaimFormScreen extends Component {
 
     this.setState(newState);
   }
+
+  addDescription = (uri, text) => {
+    const description = {
+      id: shortid.generate(),
+      uri,
+      text,
+    };
+    this.setState({
+      ...this.state.dbData,
+      descriptions: this.state.dbData.descriptions.push(description),
+    });
+  }
+
+  editDescription = (id, uri, text) => {
+    const { descriptions } = this.state.dbData;
+    const newDescription = { id, uri, text };
+
+    const currDescription = descriptions.find(tempDescription => tempDescription.id === id);
+    const index = descriptions.indexOf(currDescription);
+
+    descriptions[index] = newDescription;
+    this.setState({
+      ...this.state.dbData,
+      descriptions: newDescription,
+    });
+  }
+
+  createNewClaim = () => {
+    api.createClaim(this.state.dbData, (claims) => {
+      this.props.navigation.goBack();
+      this.props.navigation.state.params.reloadClaims(claims);
+    });
+  }
+
+  editClaim = () => {
+    api.editClaim(this.state.dbData, (claims) => {
+      this.props.navigation.goBack();
+      this.props.navigation.state.params.reloadClaims(claims);
+    });
+  }
+
   saveClaims = () => {
+    const { id } = this.state.dbData;
     const trimmedWhiteSpaceState = JSON.parse(JSON.stringify(this.state.dbData).replace(/"\s+|\s+"/g, '"'));
     if (!Object.values(trimmedWhiteSpaceState).includes('')) {
-      api.createClaim(this.state.dbData, (claims) => {
-        this.props.navigation.goBack();
-        this.props.navigation.state.params.reloadClaims(claims);
-      });
-
-
-      // this.props.navigation.navigate('Home', { reloadClaims: true });
+      if (!id && typeof id === 'object') {
+        this.createNewClaim();
+      } else {
+        this.editClaim();
+      }
     } else {
       alert('Fill out everything');
     }
   }
+
   navigateScreen = () => {
-    this.props.navigation.navigate('Description');
+    this.props.navigation.navigate('Description', { addDescription: this.addDescription, description: null, edit: false });
   };
+
+  navigateEditScreen = (description) => {
+    this.props.navigation.navigate('Description', { editDescription: this.editDescription, description, edit: true });
+  }
 
   render() {
     return (
@@ -84,6 +153,7 @@ export default class ClaimFormScreen extends Component {
                 title="Claim"
                 onChangeText={claim => this.setStateForInput('claim', claim)}
                 returnKeyType="next"
+                value={this.state.dbData.claim}
               />
             </View>
             <View style={styles.inputContainer}>
@@ -91,6 +161,7 @@ export default class ClaimFormScreen extends Component {
                 title="Insured"
                 onChangeText={insured => this.setStateForInput('insured', insured)}
                 ref={(input) => { this.secondTextInput = input; }}
+                value={this.state.dbData.insured}
               />
             </View>
             <View style={styles.inputContainer}>
@@ -98,6 +169,7 @@ export default class ClaimFormScreen extends Component {
                 title="Loss Location"
                 onChangeText={lossLocation => this.setStateForInput('lossLocation', lossLocation)}
                 ref={(input) => { this.lossLocationInputRef = input; }}
+                value={this.state.dbData.lossLocation}
               />
             </View>
             <View style={styles.inputContainer}>
@@ -105,6 +177,7 @@ export default class ClaimFormScreen extends Component {
                 title="Date of Loss"
                 onChangeText={dateOfLoss => this.setStateForInput('dateOfLoss', dateOfLoss)}
                 ref={(input) => { this.dateOfLossInputRef = input; }}
+                value={this.state.dbData.dateOfLoss}
               />
             </View>
             <View style={styles.inputContainer}>
@@ -112,6 +185,7 @@ export default class ClaimFormScreen extends Component {
                 title="Taken By"
                 onChangeText={takenBy => this.setStateForInput('takenBy', takenBy)}
                 ref={(input) => { this.takenByInputRef = input; }}
+                value={this.state.dbData.takenBy}
               />
             </View>
           </View>
@@ -131,10 +205,21 @@ export default class ClaimFormScreen extends Component {
             </ImageBackground>
           </TouchableOpacityPreventDoubleTap>
           <View style={styles.descriptionCard}>
-            <DescriptionCard
-              number={1}
-              description="The entire houe flod and water damage everthing. Everything needs to be replaced"
-            />
+            {
+              this.state.dbData.descriptions.map((description, index) => (
+                <DescriptionCard
+                  key={description.id}
+                  image={{ uri: description.uri, isStatic: true }}
+                  number={index + 1}
+                  dictionary={dictionary}
+                  description={description}
+                  navigateEditScreen={this.navigateEditScreen}
+                >
+                  {spellCheck(description.text)}
+                </DescriptionCard>
+              ))
+            }
+
           </View>
           <View style={styles.saveButtonContainer}>
             <TouchableOpacity onPress={this.saveClaims} style={styles.saveButton}>
