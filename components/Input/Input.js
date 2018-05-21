@@ -7,7 +7,7 @@ import Fonts from '../../utils/fonts';
 const Input = props => (
   <View>
     <Text style={styles.text}>{props.title}</Text>
-    <TextInput {...props} style={styles.input} underlineColorAndroid="transparent" />
+    <TextInput {...props} ref={props.inputRef} style={styles.input} underlineColorAndroid="transparent" />
   </View>
 );
 

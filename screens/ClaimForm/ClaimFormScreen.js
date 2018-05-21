@@ -6,8 +6,11 @@ import {
   StyleSheet,
   ScrollView,
   ImageBackground,
+  Alert,
 } from 'react-native';
 import shortid from 'shortid';
+import DatePicker from 'react-native-datepicker';
+
 import TouchableOpacityPreventDoubleTap from '../../components/TouchableOpacityPreventDoubleTap/TouchableOpacityPreventDoubleTap';
 import Input from '../../components/Input/Input';
 import DescriptionCard from '../../components/DescriptionCard/DescriptionCard';
@@ -35,7 +38,11 @@ export default class ClaimFormScreen extends Component {
       </TouchableOpacity>
     ),
   });
-
+  claimInput = React.createRef();
+  insuredInput = React.createRef();
+  lossLocationInput = React.createRef();
+  dateOfLossInput = React.createRef();
+  takenByInput = React.createRef();
   state = {
     dbData: {
       id: this.props.navigation.state.params.id,
@@ -46,6 +53,7 @@ export default class ClaimFormScreen extends Component {
       takenBy: '',
       descriptions: [],
     },
+    hideText: true,
   }
 
   componentDidMount() {
@@ -64,6 +72,7 @@ export default class ClaimFormScreen extends Component {
             takenBy: claim.takenBy,
             descriptions: claim.descriptions,
           },
+          hideText: false,
         });
       });
     }
@@ -141,6 +150,33 @@ export default class ClaimFormScreen extends Component {
     this.props.navigation.navigate('Description', { editDescription: this.editDescription, description, edit: true });
   }
 
+  deleteDescription = (id) => {
+    Alert.alert(
+      'Are you sure?', '',
+      [
+        { text: 'Cancel' },
+        {
+          text: 'Yes',
+          onPress: () => {
+            const { descriptions } = this.state.dbData;
+
+            const currDescription = descriptions.find(tempDescription => tempDescription.id === id);
+            const index = descriptions.indexOf(currDescription);
+
+            this.setState({
+              ...this.state.dbData,
+              descriptions: this.state.dbData.descriptions.splice(index, 1),
+            });
+          },
+        },
+      ],
+    );
+  }
+  dateSelected = (dateOfLoss) => {
+    this.setState({ ...this.setState, hideText: false });
+    this.setStateForInput('dateOfLoss', dateOfLoss);
+    this.takenByInput.focus();
+  }
   render() {
     return (
       <ScrollView style={styles.mainContainer}>
@@ -152,40 +188,66 @@ export default class ClaimFormScreen extends Component {
               <Input
                 title="Claim"
                 onChangeText={claim => this.setStateForInput('claim', claim)}
-                returnKeyType="next"
                 value={this.state.dbData.claim}
+                inputRef={(node) => { this.claimInput = node; }}
+                returnKeyType="next"
+                onSubmitEditing={() => { this.insuredInput.focus(); }}
+                blurOnSubmit={false}
               />
             </View>
             <View style={styles.inputContainer}>
               <Input
                 title="Insured"
                 onChangeText={insured => this.setStateForInput('insured', insured)}
-                ref={(input) => { this.secondTextInput = input; }}
                 value={this.state.dbData.insured}
+                inputRef={(node) => { this.insuredInput = node; }}
+                returnKeyType="next"
+                onSubmitEditing={() => { this.lossLocationInput.focus(); }}
+
               />
             </View>
             <View style={styles.inputContainer}>
               <Input
                 title="Loss Location"
                 onChangeText={lossLocation => this.setStateForInput('lossLocation', lossLocation)}
-                ref={(input) => { this.lossLocationInputRef = input; }}
                 value={this.state.dbData.lossLocation}
+                inputRef={(node) => { this.lossLocationInput = node; }}
+                returnKeyType="next"
+                onSubmitEditing={() => { this.datePickerRef.onPressDate(); }}
               />
             </View>
             <View style={styles.inputContainer}>
-              <Input
-                title="Date of Loss"
-                onChangeText={dateOfLoss => this.setStateForInput('dateOfLoss', dateOfLoss)}
-                ref={(input) => { this.dateOfLossInputRef = input; }}
-                value={this.state.dbData.dateOfLoss}
+              <Text style={styles.datePickerLabel}>Date of Loss</Text>
+              <DatePicker
+                ref={(ref) => { this.datePickerRef = ref; }}
+                date={this.state.dbData.dateOfLoss}
+                mode="date"
+                hideText={this.state.hideText}
+                format="MM/DD/YYYY"
+                confirmBtnText="Confirm"
+                cancelBtnText="Cancel"
+                onDateChange={this.dateSelected}
+                showIcon={false}
+                style={styles.datePickerInput}
+                customStyles={{
+                  dateInput: {
+                    borderWidth: 0,
+                    paddingLeft: 10,
+                    alignItems: 'flex-start',
+                  },
+                  dateText: {
+                    fontFamily: Fonts.Arimo,
+                    fontSize: 18,
+                  },
+                }}
               />
             </View>
             <View style={styles.inputContainer}>
               <Input
                 title="Taken By"
                 onChangeText={takenBy => this.setStateForInput('takenBy', takenBy)}
-                ref={(input) => { this.takenByInputRef = input; }}
                 value={this.state.dbData.takenBy}
+                inputRef={(node) => { this.takenByInput = node; }}
               />
             </View>
           </View>
@@ -214,6 +276,7 @@ export default class ClaimFormScreen extends Component {
                   dictionary={dictionary}
                   description={description}
                   navigateEditScreen={this.navigateEditScreen}
+                  deleteDescription={this.deleteDescription}
                 >
                   {spellCheck(description.text)}
                 </DescriptionCard>
@@ -311,5 +374,19 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.MontserratSemiBold,
     fontSize: 24,
     textAlign: 'center',
+  },
+  datePickerLabel: {
+    color: '#999999',
+    fontFamily: Fonts.PoppinsLight,
+    fontSize: 14,
+    marginBottom: 2,
+  },
+  datePickerInput: {
+    padding: 4,
+    margin: 0,
+    flex: 1,
+    backgroundColor: '#eaf3f5',
+    borderRadius: 10,
+    width: '100%',
   },
 });

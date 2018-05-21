@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, SafeAreaView, StyleSheet, Alert } from 'react-native';
+import { Text, View, SafeAreaView, StyleSheet, Alert, Image } from 'react-native';
 import TextLetterSpacing from 'react-native-letter-spacing';
 import Icon from 'react-native-vector-icons/Octicons';
 
@@ -58,9 +58,26 @@ export default class HomeScreen extends Component {
       return <Text>Loading...</Text>;
     }
     if (data.length === 0) {
-      return <Text>No New Claims</Text>;
+      return (
+        <View style={styles.emptyContainer}>
+          <Image
+            style={styles.blankImage}
+            source={require('./blank.jpg')}
+          />
+          <View style={styles.blankTextContainer}>
+            <Text style={styles.blankText} >No New Claims</Text>
+          </View>
+
+        </View>
+      );
     }
-    return <CarouselList data={this.state.data} deleteClaim={this.deleteClaim} navigateToClaim={this.navigateEditScreen} />;
+    return (
+      <CarouselList
+        data={this.state.data}
+        deleteClaim={this.deleteClaim}
+        navigateToClaim={this.navigateEditScreen}
+      />
+    );
   }
   render() {
     return (
@@ -153,5 +170,29 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: Fonts.PoppinsBold,
     marginLeft: 10,
+  },
+  emptyContainer: {
+    width: itemWidth - 40,
+    alignSelf: 'center',
+    borderRadius: 15,
+    height: '100%',
+    overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: '#eee',
+  },
+  blankImage: {
+    width: '100%',
+    height: '70%',
+  },
+  blankText: {
+    fontFamily: Fonts.MontserratSemiBold,
+    color: 'black',
+    fontSize: 20,
+  },
+  blankTextContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '30%',
+
   },
 });

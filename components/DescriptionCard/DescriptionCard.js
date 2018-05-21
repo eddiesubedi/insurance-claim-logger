@@ -30,7 +30,7 @@ const DescriptionCard = props => (
           </TouchableOpacity>
         </View>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={null} style={[styles.button, styles.deleteBtn]}>
+          <TouchableOpacity onPress={props.deleteDescription.bind(this, props.description.id)} style={[styles.button, styles.deleteBtn]}>
             <Text style={styles.btnText}>Delete</Text>
           </TouchableOpacity>
         </View>
