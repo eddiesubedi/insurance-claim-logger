@@ -3,14 +3,20 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 
 import styles from './carouselItem.style';
 
+
 const CarouselItem = (props) => {
   const {
     data: {
-      id, claim, insured, lossLocation, dateOfLoss, takenBy,
+      id, claim, insured, lossLocation, dateOfLoss, takenBy, descriptions,
     },
   } = props;
 
-  const image = () => <Image source={{ uri: 'https://i.imgur.com/SsJmZ9jl.jpg' }} style={styles.image} />;
+  const image = () => (
+    <Image
+      source={{ uri: descriptions[0].uri }}
+      style={styles.image}
+    />
+  );
   return (
     <View style={styles.slideInnerContainer}>
       <View style={styles.extraSpaceContainer}>

@@ -9,7 +9,12 @@ const Search = props => (
     <View style={styles.icon}>
       <Icon size={20} name="search" />
     </View>
-    <TextInput style={styles.input} placeholder="Search" underlineColorAndroid="transparent" />
+    <TextInput
+      style={styles.input}
+      placeholder="Search"
+      underlineColorAndroid="transparent"
+      {...props}
+    />
   </View>
 );
 

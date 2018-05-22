@@ -38,11 +38,7 @@ export default class ClaimFormScreen extends Component {
       </TouchableOpacity>
     ),
   });
-  claimInput = React.createRef();
-  insuredInput = React.createRef();
-  lossLocationInput = React.createRef();
-  dateOfLossInput = React.createRef();
-  takenByInput = React.createRef();
+
   state = {
     dbData: {
       id: this.props.navigation.state.params.id,
@@ -177,6 +173,11 @@ export default class ClaimFormScreen extends Component {
     this.setStateForInput('dateOfLoss', dateOfLoss);
     this.takenByInput.focus();
   }
+  claimInput = React.createRef();
+  insuredInput = React.createRef();
+  lossLocationInput = React.createRef();
+  dateOfLossInput = React.createRef();
+  takenByInput = React.createRef();
   render() {
     return (
       <ScrollView style={styles.mainContainer}>
@@ -189,7 +190,7 @@ export default class ClaimFormScreen extends Component {
                 title="Claim"
                 onChangeText={claim => this.setStateForInput('claim', claim)}
                 value={this.state.dbData.claim}
-                inputRef={(node) => { this.claimInput = node; }}
+                inputRef={(ref) => { this.claimInput = ref; }}
                 returnKeyType="next"
                 onSubmitEditing={() => { this.insuredInput.focus(); }}
                 blurOnSubmit={false}
@@ -200,7 +201,7 @@ export default class ClaimFormScreen extends Component {
                 title="Insured"
                 onChangeText={insured => this.setStateForInput('insured', insured)}
                 value={this.state.dbData.insured}
-                inputRef={(node) => { this.insuredInput = node; }}
+                inputRef={(ref) => { this.insuredInput = ref; }}
                 returnKeyType="next"
                 onSubmitEditing={() => { this.lossLocationInput.focus(); }}
 
@@ -211,15 +212,15 @@ export default class ClaimFormScreen extends Component {
                 title="Loss Location"
                 onChangeText={lossLocation => this.setStateForInput('lossLocation', lossLocation)}
                 value={this.state.dbData.lossLocation}
-                inputRef={(node) => { this.lossLocationInput = node; }}
+                inputRef={(ref) => { this.lossLocationInput = ref; }}
                 returnKeyType="next"
-                onSubmitEditing={() => { this.datePickerRef.onPressDate(); }}
+                onSubmitEditing={() => { this.dateOfLossInput.onPressDate(); }}
               />
             </View>
             <View style={styles.inputContainer}>
               <Text style={styles.datePickerLabel}>Date of Loss</Text>
               <DatePicker
-                ref={(ref) => { this.datePickerRef = ref; }}
+                ref={(ref) => { this.dateOfLossInput = ref; }}
                 date={this.state.dbData.dateOfLoss}
                 mode="date"
                 hideText={this.state.hideText}
@@ -247,7 +248,7 @@ export default class ClaimFormScreen extends Component {
                 title="Taken By"
                 onChangeText={takenBy => this.setStateForInput('takenBy', takenBy)}
                 value={this.state.dbData.takenBy}
-                inputRef={(node) => { this.takenByInput = node; }}
+                inputRef={(ref) => { this.takenByInput = ref; }}
               />
             </View>
           </View>

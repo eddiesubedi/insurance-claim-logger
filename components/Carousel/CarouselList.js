@@ -16,6 +16,7 @@ const CarouselList = (props) => {
       inactiveSlideOpacity={0.5}
       inactiveSlideScale={0.9}
       enableMomentum={false}
+      ref={props.inputRef}
     />
   );
 };

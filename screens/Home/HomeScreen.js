@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, SafeAreaView, StyleSheet, Alert, Image } from 'react-native';
 import TextLetterSpacing from 'react-native-letter-spacing';
 import Icon from 'react-native-vector-icons/Octicons';
+import Fuse from 'fuse.js';
 
 import Search from '../../components/Search/Search';
 import CarouselList from '../../components/Carousel/CarouselList';
@@ -11,20 +12,40 @@ import TouchableOpacityPreventDoubleTap from '../../components/TouchableOpacityP
 import { itemWidth } from '../../utils/carousel';
 import api from '../../utils/api';
 
+const searchOptions = {
+  shouldSort: false,
+  threshold: 0.5,
+  location: 0,
+  distance: 100,
+  maxPatternLength: 32,
+  minMatchCharLength: 1,
+  keys: [
+    'claim',
+  ],
+};
+
 export default class HomeScreen extends Component {
   state = {
     data: null,
+    result: null,
+    search: '',
   }
   componentDidMount() {
     this.getClaims();
   }
+
   getClaims = () => {
     api.getClaims((claims) => {
-      this.setState({ ...this.state, data: claims });
+      this.setState({ ...this.state, data: claims, result: claims });
     });
   }
+
+  carousel = React.createRef();
+
   reloadClaims = (claims) => {
-    this.setState({ ...this.state, data: claims });
+    this.setState({
+      ...this.state, search: '', data: claims, result: claims,
+    });
   };
 
   navigateScreen = () => {
@@ -44,14 +65,25 @@ export default class HomeScreen extends Component {
           text: 'Yes',
           onPress: () => {
             api.removeClaim(id, (claims) => {
-              this.setState({ ...this.state, data: claims });
+              this.carousel.snapToPrev();
+              this.setState({ ...this.state, data: claims, result: claims });
+              this.searchClaims(this.state.search);
             });
           },
         },
       ],
     );
   }
-
+  searchClaims = (text) => {
+    const fuse = new Fuse(this.state.data, searchOptions);
+    let result = fuse.search(text);
+    if (text.trim() === '') {
+      result = this.state.data;
+    }
+    const state = { ...this.state, search: text, result };
+    this.carousel.snapToItem(0);
+    this.setState(state);
+  }
   renderCaroselList = () => {
     const { data } = this.state;
     if (!data && typeof data === 'object') {
@@ -71,11 +103,13 @@ export default class HomeScreen extends Component {
         </View>
       );
     }
+
     return (
       <CarouselList
-        data={this.state.data}
+        data={this.state.result}
         deleteClaim={this.deleteClaim}
         navigateToClaim={this.navigateEditScreen}
+        inputRef={(ref) => { this.carousel = ref; }}
       />
     );
   }
@@ -83,7 +117,7 @@ export default class HomeScreen extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.searchContainer}>
-          <Search />
+          <Search value={this.state.search} onChangeText={this.searchClaims} />
         </View>
         <View style={styles.filterContainer}>
           <View style={styles.textContainer}>
