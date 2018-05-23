@@ -1,5 +1,6 @@
 import { AsyncStorage } from 'react-native';
 import shortid from 'shortid';
+import natsort from 'natsort';
 
 const api = (() => {
   const CLAIMS_KEY = '@DHAdusting:Calims';
@@ -52,12 +53,24 @@ const api = (() => {
     AsyncStorage.removeItem(CLAIMS_KEY);
   }
 
+  function sortClaimsByDate(claims, desc) {
+    const sorter = natsort({ desc });
+    claims.sort((a, b) => sorter(a.dateOfLoss, b.dateOfLoss));
+  }
+
+  function sortClaimsByName(claims, desc) {
+    const sorter = natsort({ desc });
+    claims.sort((a, b) => sorter(a.claim, b.claim));
+  }
+
   const publicAPI = {
     createClaim: setClaim,
     removeAllClaims,
     editClaim,
     removeClaim,
     getClaims,
+    sortClaimsByDate,
+    sortClaimsByName,
   };
 
   return publicAPI;

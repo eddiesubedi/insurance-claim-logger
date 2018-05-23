@@ -4333,6 +4333,10 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
+natsort@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/natsort/-/natsort-1.0.6.tgz#fd4f4631fac7f5885aa77f71fd55a2742d94eb32"
+
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"

@@ -30,7 +30,7 @@ const CarouselItem = (props) => {
               {claim}
             </Text>
             <Text style={styles.subtitle} numberOfLines={2}>
-              {insured}
+              {`${insured} ${dateOfLoss}`}
             </Text>
             <View style={styles.buttonRow}>
               <View style={styles.buttonContainer}>

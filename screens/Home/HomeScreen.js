@@ -3,6 +3,7 @@ import { Text, View, SafeAreaView, StyleSheet, Alert, Image } from 'react-native
 import TextLetterSpacing from 'react-native-letter-spacing';
 import Icon from 'react-native-vector-icons/Octicons';
 import Fuse from 'fuse.js';
+import natsort from 'natsort';
 
 import Search from '../../components/Search/Search';
 import CarouselList from '../../components/Carousel/CarouselList';
@@ -36,6 +37,7 @@ export default class HomeScreen extends Component {
 
   getClaims = () => {
     api.getClaims((claims) => {
+      api.sortClaimsByDate(claims, true);
       this.setState({ ...this.state, data: claims, result: claims });
     });
   }
@@ -84,6 +86,16 @@ export default class HomeScreen extends Component {
     this.carousel.snapToItem(0);
     this.setState(state);
   }
+
+  dropDownSelect = (index, value) => {
+    const claims = this.state.result;
+    if (index === '0') {
+      api.sortClaimsByDate(claims, true);
+    } else if (index === '1') {
+      api.sortClaimsByName(claims, false);
+    }
+    this.setState({ ...this.state, result: claims });
+  }
   renderCaroselList = () => {
     const { data } = this.state;
     if (!data && typeof data === 'object') {
@@ -126,7 +138,7 @@ export default class HomeScreen extends Component {
             </TextLetterSpacing>
           </View>
           <View style={styles.filter}>
-            <Filter />
+            <Filter dropDownOnSelect={this.dropDownSelect} />
           </View>
         </View>
         <View style={styles.cards}>

@@ -14,6 +14,7 @@ const Filter = props => (
     defaultIndex={0}
     dropdownTextStyle={styles.dropdownTextStyle}
     dropdownStyle={styles.dropdownStyle}
+    onSelect={props.dropDownOnSelect}
   >
     <View style={styles.container}>
       <Icon size={29} name="settings" />
@@ -37,10 +38,6 @@ const styles = StyleSheet.create({
   dropdownTextStyle: {
     fontFamily: Fonts.Arimo,
     fontSize: 18,
-  },
-  dropdownTextHighlightStyle: {
-    backgroundColor: 'red',
-    color: '#000',
   },
   container: {
     padding: 20,
