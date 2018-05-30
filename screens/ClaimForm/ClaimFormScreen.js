@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
-import {
-  Text,
-  View,
-  TouchableOpacity,
-  StyleSheet,
-  ScrollView,
-  ImageBackground,
-  Alert,
-} from 'react-native';
-import shortid from 'shortid';
+import { Alert, ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import DatePicker from 'react-native-datepicker';
+import shortid from 'shortid';
+import Share from 'react-native-share';
 
-import TouchableOpacityPreventDoubleTap from '../../components/TouchableOpacityPreventDoubleTap/TouchableOpacityPreventDoubleTap';
-import Input from '../../components/Input/Input';
+import Test from '../../components/CreatePDF/Test';
 import DescriptionCard from '../../components/DescriptionCard/DescriptionCard';
-import Fonts from '../../utils/fonts';
+import Input from '../../components/Input/Input';
+import TouchableOpacityPreventDoubleTap from '../../components/TouchableOpacityPreventDoubleTap/TouchableOpacityPreventDoubleTap';
 import api from '../../utils/api';
 import dictionary from '../../utils/en_US';
+import Fonts from '../../utils/fonts';
 import spellCheck from '../../utils/spellCheck';
 
+const shareOptions = {
+  title: 'React Native',
+  message: 'Hola mundo',
+  url: 'file:///storage/emulated/0/Documents/test.pdf',
+  subject: 'Share Link', //  for email
+};
 
 export default class ClaimFormScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -33,26 +33,16 @@ export default class ClaimFormScreen extends Component {
       </TouchableOpacity>
     ),
     headerRight: (
-      <TouchableOpacity style={styles.buttonContainer}>
-        <Text style={styles.btnText}>Send</Text>
+      <TouchableOpacity
+        onPress={navigation.state.params.navigateScreen}
+        style={styles.buttonContainer}
+      >
+        <Text style={styles.btnText}>Save</Text>
       </TouchableOpacity>
     ),
   });
-
-  state = {
-    dbData: {
-      id: this.props.navigation.state.params.id,
-      claim: '',
-      insured: '',
-      lossLocation: '',
-      dateOfLoss: '',
-      takenBy: '',
-      descriptions: [],
-    },
-    hideText: true,
-  }
-
-  componentDidMount() {
+  constructor(props) {
+    super(props);
     const { id } = this.state.dbData;
     if (!(!id && typeof id === 'object')) {
       api.getClaims((claims) => {
@@ -72,7 +62,54 @@ export default class ClaimFormScreen extends Component {
         });
       });
     }
+    this.props.navigation.setParams({
+      navigateScreen: this.saveClaims,
+    });
   }
+
+
+  state = {
+    dbData: {
+      id: this.props.navigation.state.params.id,
+      claim: '',
+      insured: '',
+      lossLocation: '',
+      dateOfLoss: '',
+      takenBy: '',
+      descriptions: [],
+    },
+    hideText: true,
+    visible: false,
+  }
+  onCancel() {
+    console.log('CANCEL');
+    this.setState({ ...this.state, visible: false });
+  }
+  onOpen() {
+    console.log('OPEN');
+    this.setState({ ...this.state, visible: true });
+  }
+  // componentDidMount() {
+  //   const { id } = this.state.dbData;
+  //   if (!(!id && typeof id === 'object')) {
+  //     api.getClaims((claims) => {
+  //       const claim = claims.find(tempClaim => tempClaim.id === id);
+  //       this.setState({
+  //         ...this.state,
+  //         dbData: {
+  //           ...this.state.dbData,
+  //           claim: claim.claim,
+  //           insured: claim.insured,
+  //           lossLocation: claim.lossLocation,
+  //           dateOfLoss: claim.dateOfLoss,
+  //           takenBy: claim.takenBy,
+  //           descriptions: claim.descriptions,
+  //         },
+  //         hideText: false,
+  //       });
+  //     });
+  //   }
+  // }
 
   setStateForInput = (key, value) => {
     const obj = {};
@@ -83,6 +120,10 @@ export default class ClaimFormScreen extends Component {
 
     this.setState(newState);
   }
+
+  navigateScreen = () => {
+    this.saveClaims();
+  };
 
   addDescription = (uri, text) => {
     const description = {
@@ -172,6 +213,9 @@ export default class ClaimFormScreen extends Component {
     this.setState({ ...this.setState, hideText: false });
     this.setStateForInput('dateOfLoss', dateOfLoss);
     this.takenByInput.focus();
+  }
+  createAndSendPDF = () => {
+    Share.open(shareOptions);
   }
   claimInput = React.createRef();
   insuredInput = React.createRef();
@@ -285,11 +329,15 @@ export default class ClaimFormScreen extends Component {
             }
 
           </View>
-          <View style={styles.saveButtonContainer}>
-            <TouchableOpacity onPress={this.saveClaims} style={styles.saveButton}>
-              <Text style={styles.saveBtnText}>Save</Text>
+          {/* <View style={styles.saveButtonContainer}>
+            <TouchableOpacity
+              onPress={this.createAndSendPDF}
+              style={styles.saveButton}
+            >
+              <Text style={styles.saveBtnText}>Send</Text>
             </TouchableOpacity>
-          </View>
+          </View> */}
+          <Test claim={this.state.dbData} />
         </View>
       </ScrollView>
     );

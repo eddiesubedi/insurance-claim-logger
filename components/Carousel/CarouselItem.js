@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
+import Test from '../CreatePDF/Test';
 
 import styles from './carouselItem.style';
 
@@ -39,9 +40,10 @@ const CarouselItem = (props) => {
                 </TouchableOpacity>
               </View>
               <View style={styles.buttonContainer}>
-                <TouchableOpacity style={styles.sendButton}>
+                {/* <TouchableOpacity style={styles.sendButton}>
                   <Text style={[styles.btnText, styles.sendText]}>Send</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
+                <Test claim={props.data} />
               </View>
             </View>
           </View>

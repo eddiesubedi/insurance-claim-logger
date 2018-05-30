@@ -8,6 +8,8 @@ import {
   Image,
   TextInput,
   KeyboardAvoidingView,
+  BackHandler,
+  Alert,
 } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import Fonts from '../../utils/fonts';
@@ -43,7 +45,7 @@ export default class HomeScreen extends Component {
     imageEncodedData: null,
     description: '',
   };
-  componentDidMount() {
+  componentWillMount() {
     this.props.navigation.setParams({
       navigateScreen: this.navigateScreen,
     });
@@ -55,6 +57,24 @@ export default class HomeScreen extends Component {
         description: description.text,
       });
     }
+  }
+
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.onBackPressed);
+  }
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.onBackPressed);
+  }
+  onBackPressed = () => {
+    Alert.alert(
+      'Are you sure you',
+      'Do you want to go back and discard changes? ',
+      [
+        { text: 'Cancel', onPress: null, style: 'cancel' },
+        { text: 'OK', onPress: () => { this.navigateScreen(); } },
+      ],
+    );
+    return true;
   }
   onImageResponse = (response) => {
     if (response.didCancel) {
@@ -89,23 +109,26 @@ export default class HomeScreen extends Component {
     });
   }
   navigateScreen = () => {
-    this.props.navigation.goBack();
-
-    if (this.props.navigation.state.params.edit) {
-      const { description } = this.props.navigation.state.params;
-      this.props.navigation.state.params.editDescription(
-        description.id,
-        this.state.imageEncodedData.uri,
-        this.state.description,
-      );
+    if (!this.state.imageEncodedData && typeof this.state.imageEncodedData === 'object') {
+      alert('Please Select an Image');
+    } else if (this.state.description.trim() === '') {
+      alert('Please add description');
     } else {
-      this.props.navigation.state.params.addDescription(
-        this.state.imageEncodedData.uri,
-        this.state.description,
-      );
+      this.props.navigation.goBack();
+      if (this.props.navigation.state.params.edit) {
+        const { description } = this.props.navigation.state.params;
+        this.props.navigation.state.params.editDescription(
+          description.id,
+          this.state.imageEncodedData.uri,
+          this.state.description,
+        );
+      } else {
+        this.props.navigation.state.params.addDescription(
+          this.state.imageEncodedData.uri,
+          this.state.description,
+        );
+      }
     }
-
-    // this.props.navigation.navigate('CalimForm');
   };
   render() {
     return (

@@ -1,17 +1,16 @@
+import Fuse from 'fuse.js';
 import React, { Component } from 'react';
-import { Text, View, SafeAreaView, StyleSheet, Alert, Image } from 'react-native';
+import { Alert, Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import TextLetterSpacing from 'react-native-letter-spacing';
 import Icon from 'react-native-vector-icons/Octicons';
-import Fuse from 'fuse.js';
-import natsort from 'natsort';
-
-import Search from '../../components/Search/Search';
 import CarouselList from '../../components/Carousel/CarouselList';
 import Filter from '../../components/Filter/Filter';
-import Fonts from '../../utils/fonts';
+import Search from '../../components/Search/Search';
 import TouchableOpacityPreventDoubleTap from '../../components/TouchableOpacityPreventDoubleTap/TouchableOpacityPreventDoubleTap';
-import { itemWidth } from '../../utils/carousel';
 import api from '../../utils/api';
+import { itemWidth } from '../../utils/carousel';
+import Fonts from '../../utils/fonts';
+
 
 const searchOptions = {
   shouldSort: false,
@@ -92,7 +91,7 @@ export default class HomeScreen extends Component {
     if (index === '0') {
       api.sortClaimsByDate(claims, true);
     } else if (index === '1') {
-      api.sortClaimsByName(claims, false);
+      api.sortClaimsByName(claims, true);
     }
     this.setState({ ...this.state, result: claims });
   }
